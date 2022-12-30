@@ -4,10 +4,10 @@ on:
     - cron: '0 16 * * *'
   push:
     branches: [ "main" ]
-    paths: [ "Dockerfile",".github/workflows/docker-build-publish.yml" ]
+    paths: [ "Dockerfile",".github/workflows/docker-build-publish.yml","web/**" ]
   pull_request:
     branches: [ "main" ]
-    paths: [ "Dockerfile",".github/workflows/docker-build-publish.yml" ]
+    paths: [ "Dockerfile",".github/workflows/docker-build-publish.yml","web/**" ]
   workflow_dispatch: ~
 
 jobs:
