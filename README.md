@@ -6,7 +6,7 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/kimi360/donate?color=orange)](https://hub.docker.com/r/kimi360/donate)
 
 ## 简介
-🍌一款包含支付宝、微信的捐赠按钮镜像，可使用iframe嵌入。
+🍌一款包含支付宝、微信捐赠按钮的镜像，可使用iframe嵌入。
 
 ## 说明
 - 基于 [TinyJay/donate-page](https://github.com/TinyJay/donate-page) 进行修改。
