@@ -50,7 +50,9 @@
 
 
 ##  效果
-![AriaNg](https://raw.githubusercontent.com/kimi360/Docker-Donate/main/screenshots/donate.webp)
+<div align=center>
+<img src="https://raw.githubusercontent.com/kimi360/Docker-Donate/main/screenshots/donate.webp"/>
+</div>
 
 ##  演示
 - [演示站点](https://donate.kimi360.top/)
