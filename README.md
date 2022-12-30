@@ -12,7 +12,7 @@
 - 基于 [TinyJay/donate-page](https://github.com/TinyJay/donate-page) 进行修改。
 - 使用翻转卡片样式，仅保留支付宝和微信二维码。
 - 对CSS进行了修改和适配。
-- 点击连接查看[Dockerfile](https://github.com/kimi360/Docker-Donate/blob/main/Dockerfile)。
+- 点击连接查看 [Dockerfile](https://github.com/kimi360/Docker-Donate/blob/main/Dockerfile)。
 
 ##  使用
 ###  二维码制作
@@ -37,6 +37,8 @@
         image: kimi360/donate
         container_name: donate
         restart: unless-stopped
+        ports:
+          - 80:80
         volumes:
           - ~/AliPayQR.png:/web/images/AliPayQR.png
           - ~/WeChatQR.png:/web/images/WeChatQR.png
