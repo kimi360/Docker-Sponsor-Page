@@ -61,3 +61,15 @@
 
 ##  协议
 [MIT](https://github.com/kimi360/Docker-Donate/blob/main/LICENSE)
+
+##  感谢您的支持
+<table>
+  <tr>
+    <td><img src="https://github.com/kimi360/Docker-Donate/raw/main/web/images/AliPayQR.png"></img></td>
+    <td><img src="https://github.com/kimi360/Docker-Donate/raw/main/web/images/WeChatQR.png"></img></td>
+  </tr>
+  <tr>
+    <td align="center"><b>支付宝</b></td>
+    <td align="center"><b>微信</b></td>
+  </tr>
+</table>
