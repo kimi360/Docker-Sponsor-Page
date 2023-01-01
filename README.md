@@ -22,32 +22,39 @@
 - 下载二维码为 `png` 格式。
 
 ###  快速开始
-    docker run -d \
-        --name donate \
-        --restart unless-stopped \
-        -p 80:80 \
-        -v ~/AliPayQR.png:/web/images/AliPayQR.png \
-        -v ~/WeChatQR.png:/web/images/WeChatQR.png \
-        kimi360/donate:latest
+
+```shell
+docker run -d \
+    --name donate \
+    --restart unless-stopped \
+    -p 80:80 \
+    -v ~/AliPayQR.png:/web/images/AliPayQR.png \
+    -v ~/WeChatQR.png:/web/images/WeChatQR.png \
+    kimi360/donate:latest
+```
 
 ###  Docker-compose
-    version: '3'
-    services:
-      donate:
-        image: kimi360/donate
-        container_name: donate
-        restart: unless-stopped
-        ports:
-          - 80:80
-        volumes:
-          - ~/AliPayQR.png:/web/images/AliPayQR.png
-          - ~/WeChatQR.png:/web/images/WeChatQR.png
+
+```yaml
+version: '3'
+services:
+  donate:
+    image: kimi360/donate
+    container_name: donate
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - ~/AliPayQR.png:/web/images/AliPayQR.png
+      - ~/WeChatQR.png:/web/images/WeChatQR.png
+```
 
 ###  iframe引用
 > 使用 `iframe` 嵌入页面的代码，高度至少 `240px`，宽度至少 `310px`！
 
-    <iframe src="https://guoyanjun.top/donate-page/sample1/index.html" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe>
-
+```html
+<iframe src="https://guoyanjun.top/donate-page/sample1/index.html" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe>
+```
 
 ##  效果
 <div align=center>
