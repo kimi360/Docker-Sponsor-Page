@@ -6,9 +6,12 @@
 # https://github.com/chrisaxiom/docker-health-check
 
 # Build environment
-FROM alpine AS build 
+FROM alpine:3.16.3 AS build 
 
-RUN apk add --no-cache build-base git
+RUN apk add --no-cache \
+  build-base=~0.5 \
+  git=~2.38.2
+  
 WORKDIR /src
 RUN git clone https://github.com/emikulic/darkhttpd .
 COPY ./web ./web
