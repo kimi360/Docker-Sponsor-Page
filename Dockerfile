@@ -6,7 +6,7 @@
 # https://github.com/chrisaxiom/docker-health-check
 
 # Build environment
-FROM alpine:3.16.3 AS build 
+FROM alpine:3.17.0 AS build 
 
 RUN apk add --no-cache \
   build-base=~0.5 \
