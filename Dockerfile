@@ -7,6 +7,7 @@
 
 # Build environment
 FROM alpine:3.17.0 AS build 
+ARG STYLE=1
 
 RUN apk add --no-cache \
   build-base=~0.5 \
@@ -39,9 +40,13 @@ RUN make darkhttpd-static \
  && strip darkhttpd-static \
  && mkdir -p /apps/etc \
  && mv darkhttpd-static /apps/darkhttpd \
- && mv web /apps/web \
  && mv passwd /apps/etc \
- && mv group /apps/etc 
+ && mv group /apps/etc \ 
+ && if [ "$STYLE" = 1 ]; then \
+      mv web/sample1 /apps/web; \
+    elif [ "$STYLE" = 2 ]; then \
+      mv web/sample2 /apps/web; \
+    fi; 
 
 FROM scratch
 LABEL maintainer="KIMI360 <https://github.com/kimi360>"

@@ -1,0 +1,4 @@
+# Donate
+
+User-agent: *
+Disallow: /
