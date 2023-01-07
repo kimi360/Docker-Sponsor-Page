@@ -59,13 +59,16 @@ services:
 ```
 
 ##  效果
+### 翻转卡片
 ![screenshots][screenshots.donate]
+
+### 打赏咖啡
 ![screenshots][screenshots.sponsor]
 
 
 ##  演示
-- [演示站点-样式1][Demo.style1]
-- [演示站点-样式2][Demo.style2]
+- [演示站点 - 翻转卡片][Demo.style1]
+- [演示站点 - 打赏咖啡][Demo.style2]
 
 ##  引用
 - [Kaiyuan/sponsor-page][sponsor-page]
