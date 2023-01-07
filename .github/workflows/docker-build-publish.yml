@@ -38,13 +38,14 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Extract Docker metadata
-      id: meta
+    - name: Extract Docker metadata (style1)
+      id: meta-style1
       uses: docker/metadata-action@v4
       with:
         images: ${{ secrets.DOCKER_USERNAME }}/donate
         tags: |
           type=raw,value=latest,enable=true
+          type=raw,value=style1,enable=true
         labels: |
           org.opencontainers.image.author=KIMI360
           org.opencontainers.image.description=
@@ -56,13 +57,50 @@ jobs:
           org.opencontainers.image.docker.cmd=docker run -p 80:80 -d kimi360/donate
         flavor: latest=false     
 
-    - name: Build and push Docker image
+    - name: Build and push Docker image (style1)
       uses: docker/build-push-action@v3
       with:
         context: .
+        build-args: STYLE=1
         push: true
-        tags: ${{ steps.meta.outputs.tags }}
-        labels: ${{ steps.meta.outputs.labels }}
+        tags: ${{ steps.meta-style1.outputs.tags }}
+        labels: ${{ steps.meta-style1.outputs.labels }}
+        platforms: |
+            linux/amd64
+            linux/arm64
+            linux/arm/v7
+            linux/arm/v6
+            linux/386
+        cache-from: type=local,src=/tmp/.buildx-cache
+        cache-to: type=local,dest=/tmp/.buildx-cache
+
+
+    - name: Extract Docker metadata (style2)
+      id: meta-style2
+      uses: docker/metadata-action@v4
+      with:
+        images: ${{ secrets.DOCKER_USERNAME }}/donate
+        tags: |
+          type=raw,value=style2,enable=true
+        labels: |
+          org.opencontainers.image.author=KIMI360
+          org.opencontainers.image.description=
+          org.opencontainers.image.licenses=MIT
+          org.opencontainers.image.source=https://github.com/kimi360/Docker-Donate
+          org.opencontainers.image.title=${{ secrets.DOCKER_USERNAME }}/donate
+          org.opencontainers.image.url=https://github.com/kimi360/Docker-Donate
+          org.opencontainers.image.version=
+          org.opencontainers.image.docker.cmd=docker run -p 80:80 -d kimi360/donate
+        flavor: latest=false     
+
+    - name: Build and push Docker image (style2)
+      uses: docker/build-push-action@v3
+      with:
+        context: .
+        build-args: STYLE=2
+        push: true
+        tags: ${{ steps.meta-style2.outputs.tags }}
+        labels: ${{ steps.meta-style2.outputs.labels }}
         platforms: |
             linux/amd64
             linux/arm64
