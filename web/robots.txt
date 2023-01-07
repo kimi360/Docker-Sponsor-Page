@@ -1,4 +1,0 @@
-# Donate
-
-User-agent: *
-Disallow: /
