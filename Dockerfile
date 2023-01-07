@@ -49,7 +49,7 @@ RUN make darkhttpd-static \
     fi; 
 
 FROM scratch
-LABEL maintainer="KIMI360 <https://github.com/kimi360>"
+LABEL maintainer="KIMI360 <https://kimi360.top>"
 COPY --from=build --chown=0:0 /apps /
 EXPOSE 80
 ENTRYPOINT ["/darkhttpd","/web", "--chroot", "--uid", "nobody", "--gid", "nobody"]
