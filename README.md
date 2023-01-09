@@ -1,4 +1,4 @@
-# Donate
+# Sponsor-Page
 [![icon][icon.license]][License]
 [![icon][icon.build]][Action]
 [![icon][icon.darkhttpd]][darkhttpd.release]
@@ -6,7 +6,7 @@
 [![icon][icon.docker.pull]][Docker.page]
 
 ## 简介
-🍌一款包含支付宝、微信捐赠按钮的镜像，可使用iframe嵌入。
+🍌一款包含支付宝、微信赞助按钮的镜像，可使用iframe嵌入。
 
 ## 说明
 - 基于 [Kaiyuan/sponsor-page][sponsor-page] [TinyJay/donate-page][donate-page] 进行修改。
@@ -27,12 +27,12 @@
 
 ```shell
 docker run -d \
-    --name donate \
+    --name sponsor \
     --restart unless-stopped \
     -p 80:80 \
     -v ~/AliPayQR.png:/web/images/AliPayQR.png \
     -v ~/WeChatQR.png:/web/images/WeChatQR.png \
-    kimi360/donate
+    kimi360/sponsor
 ```
 
 ###  Docker-compose
@@ -40,9 +40,9 @@ docker run -d \
 ```yaml
 version: '3'
 services:
-  donate:
-    image: kimi360/donate
-    container_name: donate
+  sponsor:
+    image: kimi360/sponsor
+    container_name: sponsor
     restart: unless-stopped
     ports:
       - 80:80
@@ -55,7 +55,7 @@ services:
 > 使用 `iframe` 嵌入页面的代码，高度至少 `240px`，宽度至少 `310px`！
 
 ```html
-<iframe src="https://donate.kimi360.top/index.html" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe>
+<iframe src="https://sponsor.kimi360.top/index.html" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe>
 ```
 
 ##  效果
@@ -78,11 +78,11 @@ services:
 ##  协议
 - [MIT][License]
 
-[icon.license]:        https://img.shields.io/github/license/kimi360/Docker-Donate
-[icon.build]:          https://img.shields.io/github/actions/workflow/status/kimi360/Docker-Donate/docker-build-publish.yml
+[icon.license]:        https://img.shields.io/github/license/kimi360/Docker-Sponsor-Page
+[icon.build]:          https://img.shields.io/github/actions/workflow/status/kimi360/Docker-Sponsor-Page/docker-build-publish.yml
 [icon.darkhttpd]:      https://img.shields.io/github/v/release/emikulic/darkhttpd?label=darkhttpd
-[icon.docker.size]:    https://img.shields.io/docker/image-size/kimi360/donate/latest?color=yellow
-[icon.docker.pull]:    https://img.shields.io/docker/pulls/kimi360/donate?color=orange
+[icon.docker.size]:    https://img.shields.io/docker/image-size/kimi360/sponsor/latest?color=yellow
+[icon.docker.pull]:    https://img.shields.io/docker/pulls/kimi360/sponsor?color=orange
 
 [sponsor-page]:        https://github.com/Kaiyuan/sponsor-page.git
 [donate-page]:         https://github.com/TinyJay/donate-page
@@ -90,12 +90,12 @@ services:
 [darkhttpd.release]:   https://github.com/emikulic/darkhttpd/releases
 [cli]:                 https://cli.im/
 
-[Action]:              https://github.com/kimi360/Docker-Donate/actions/workflows/docker-build-publish.yml
-[Dockerfile]:          https://github.com/kimi360/Docker-Donate/blob/main/Dockerfile
-[License]:             https://github.com/kimi360/Docker-Donate/blob/main/LICENSE
-[Demo.style1]:         https://donate.kimi360.top/style1
-[Demo.style2]:         https://donate.kimi360.top/style2
-[Docker.page]:         https://hub.docker.com/r/kimi360/donate
-[Docker.tags]:         https://hub.docker.com/r/kimi360/donate/tags
-[screenshots.donate]:  https://raw.githubusercontent.com/kimi360/Docker-Donate/main/screenshots/donate.webp
-[screenshots.sponsor]: https://raw.githubusercontent.com/kimi360/Docker-Donate/main/screenshots/sponsor.webp
+[Action]:              https://github.com/kimi360/Docker-Sponsor-Page/actions/workflows/docker-build-publish.yml
+[Dockerfile]:          https://github.com/kimi360/Docker-Sponsor-Page/blob/main/Dockerfile
+[License]:             https://github.com/kimi360/Docker-Sponsor-Page/blob/main/LICENSE
+[Demo.style1]:         https://sponsor.kimi360.top/style1
+[Demo.style2]:         https://sponsor.kimi360.top/style2
+[Docker.page]:         https://hub.docker.com/r/kimi360/sponsor
+[Docker.tags]:         https://hub.docker.com/r/kimi360/sponsor/tags
+[screenshots.donate]:  https://raw.githubusercontent.com/kimi360/Docker-Sponsor-Page/main/screenshots/donate.webp
+[screenshots.sponsor]: https://raw.githubusercontent.com/kimi360/Docker-Sponsor-Page/main/screenshots/sponsor.webp
