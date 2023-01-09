@@ -28,9 +28,9 @@ jobs:
       uses: actions/cache@v3.2.2
       with:
         path: /tmp/.buildx-cache
-        key: donate-${{ runner.os }}-buildx-${{ github.sha }}
+        key: sponsor-${{ runner.os }}-buildx-${{ github.sha }}
         restore-keys: |
-          donate-${{ runner.os }}-buildx-
+          sponsor-${{ runner.os }}-buildx-
           
     - name: Login to DockerHub
       uses: docker/login-action@v2
@@ -42,7 +42,7 @@ jobs:
       id: meta-style1
       uses: docker/metadata-action@v4
       with:
-        images: ${{ secrets.DOCKER_USERNAME }}/donate
+        images: ${{ secrets.DOCKER_USERNAME }}/sponsor
         tags: |
           type=raw,value=latest,enable=true
           type=raw,value=style1,enable=true
@@ -50,11 +50,11 @@ jobs:
           org.opencontainers.image.author=KIMI360
           org.opencontainers.image.description=
           org.opencontainers.image.licenses=MIT
-          org.opencontainers.image.source=https://github.com/kimi360/Docker-Donate
-          org.opencontainers.image.title=${{ secrets.DOCKER_USERNAME }}/donate
-          org.opencontainers.image.url=https://github.com/kimi360/Docker-Donate
+          org.opencontainers.image.source=https://github.com/kimi360/Docker-Sponsor-Page
+          org.opencontainers.image.title=${{ secrets.DOCKER_USERNAME }}/sponsor
+          org.opencontainers.image.url=https://github.com/kimi360/Docker-Sponsor-Page
           org.opencontainers.image.version=
-          org.opencontainers.image.docker.cmd=docker run -p 80:80 -d kimi360/donate
+          org.opencontainers.image.docker.cmd=docker run -p 80:80 -d kimi360/sponsor
         flavor: latest=false     
 
     - name: Build and push Docker image (style1)
@@ -79,18 +79,18 @@ jobs:
       id: meta-style2
       uses: docker/metadata-action@v4
       with:
-        images: ${{ secrets.DOCKER_USERNAME }}/donate
+        images: ${{ secrets.DOCKER_USERNAME }}/sponsor
         tags: |
           type=raw,value=style2,enable=true
         labels: |
           org.opencontainers.image.author=KIMI360
           org.opencontainers.image.description=
           org.opencontainers.image.licenses=MIT
-          org.opencontainers.image.source=https://github.com/kimi360/Docker-Donate
-          org.opencontainers.image.title=${{ secrets.DOCKER_USERNAME }}/donate
-          org.opencontainers.image.url=https://github.com/kimi360/Docker-Donate
+          org.opencontainers.image.source=https://github.com/kimi360/Docker-Sponsor-Page
+          org.opencontainers.image.title=${{ secrets.DOCKER_USERNAME }}/sponsor
+          org.opencontainers.image.url=https://github.com/kimi360/Docker-Sponsor-Page
           org.opencontainers.image.version=
-          org.opencontainers.image.docker.cmd=docker run -p 80:80 -d kimi360/donate
+          org.opencontainers.image.docker.cmd=docker run -p 80:80 -d kimi360/sponsor
         flavor: latest=false     
 
     - name: Build and push Docker image (style2)
