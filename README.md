@@ -68,7 +68,7 @@ services:
 
 ##  演示
 - [演示站点 - 翻转卡片][Demo.style1]
-- [演示站点 - 打赏咖啡][Demo.style2]
+- [演示站点 - 打赏咖啡][Demo.style2] (为适应博客，改了按钮及阴影颜色)
 
 ##  引用
 - [Kaiyuan/sponsor-page][sponsor-page]

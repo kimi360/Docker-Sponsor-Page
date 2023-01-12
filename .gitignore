@@ -1,0 +1,3 @@
+build.bat
+docker-compose.yml
+logs/access.log
