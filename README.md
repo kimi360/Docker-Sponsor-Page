@@ -1,9 +1,9 @@
 # Sponsor-Page
-[![icon][icon.license]][License]
-[![icon][icon.build]][Action]
+[![icon][icon.license]][license]
+[![icon][icon.build]][action]
 [![icon][icon.darkhttpd]][darkhttpd.release]
-[![icon][icon.docker.size]][Docker.tags]
-[![icon][icon.docker.pull]][Docker.page]
+[![icon][icon.docker.size]][docker.tags]
+[![icon][icon.docker.pull]][docker.page]
 
 ## 简介
 🍌一款包含支付宝、微信赞助按钮的镜像，可使用iframe嵌入。
@@ -14,7 +14,7 @@
 - 对CSS进行了修改和适配。
 - `tag:style1` - 翻转卡片。
 - `tag:style2` - 打赏咖啡。
-- 点击连接查看 [Dockerfile] 。
+- 点击连接查看 [Dockerfile][dockerfile] 。
 
 ##  使用
 ###  二维码制作
@@ -67,8 +67,8 @@ services:
 
 
 ##  演示
-- [演示站点 - 翻转卡片][Demo.style1]
-- [演示站点 - 打赏咖啡][Demo.style2] (为适应博客，改了按钮及阴影颜色)
+- [演示站点 - 翻转卡片][demo.style1]
+- [演示站点 - 打赏咖啡][demo.style2] (为适应博客，改了按钮及阴影颜色)
 
 ##  引用
 - [Kaiyuan/sponsor-page][sponsor-page]
@@ -76,7 +76,7 @@ services:
 - [emikulic/darkhttpd][darkhttpd]
 
 ##  协议
-- [MIT][License]
+- [MIT][license]
 
 [icon.license]:        https://img.shields.io/github/license/kimi360/Docker-Sponsor-Page
 [icon.build]:          https://img.shields.io/github/actions/workflow/status/kimi360/Docker-Sponsor-Page/docker-build-publish.yml
@@ -90,12 +90,12 @@ services:
 [darkhttpd.release]:   https://github.com/emikulic/darkhttpd/releases
 [cli]:                 https://cli.im/
 
-[Action]:              https://github.com/kimi360/Docker-Sponsor-Page/actions/workflows/docker-build-publish.yml
-[Dockerfile]:          https://github.com/kimi360/Docker-Sponsor-Page/blob/main/Dockerfile
-[License]:             https://github.com/kimi360/Docker-Sponsor-Page/blob/main/LICENSE
-[Demo.style1]:         https://sponsor.kimi360.top/style1
-[Demo.style2]:         https://sponsor.kimi360.top/style2
-[Docker.page]:         https://hub.docker.com/r/kimi360/sponsor
-[Docker.tags]:         https://hub.docker.com/r/kimi360/sponsor/tags
+[action]:              https://github.com/kimi360/Docker-Sponsor-Page/actions/workflows/docker-build-publish.yml
+[dockerfile]:          https://github.com/kimi360/Docker-Sponsor-Page/blob/main/Dockerfile
+[license]:             https://github.com/kimi360/Docker-Sponsor-Page/blob/main/LICENSE
+[demo.style1]:         https://sponsor.kimi360.top/style1
+[demo.style2]:         https://sponsor.kimi360.top/style2
+[docker.page]:         https://hub.docker.com/r/kimi360/sponsor
+[docker.tags]:         https://hub.docker.com/r/kimi360/sponsor/tags
 [screenshots.donate]:  https://raw.githubusercontent.com/kimi360/Docker-Sponsor-Page/main/screenshots/donate.webp
 [screenshots.sponsor]: https://raw.githubusercontent.com/kimi360/Docker-Sponsor-Page/main/screenshots/sponsor.webp
