@@ -6,7 +6,7 @@
 [![icon][icon.docker.pull]][docker.page]
 
 ## 简介
-🍌一款包含支付宝、微信赞助按钮的镜像，可使用iframe嵌入。
+:banana: 一款包含支付宝、微信赞助按钮的镜像，可使用iframe嵌入。
 
 ## 说明
 - 基于 [Kaiyuan/sponsor-page][sponsor-page] [TinyJay/donate-page][donate-page] 进行修改。
