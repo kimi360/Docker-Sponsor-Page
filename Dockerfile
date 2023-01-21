@@ -11,7 +11,7 @@ ARG STYLE=1
 
 RUN apk add --no-cache \
   build-base=~0.5 \
-  git=~2.38.2
+  git=~2.38.3
   
 WORKDIR /src
 RUN git clone https://github.com/emikulic/darkhttpd .
