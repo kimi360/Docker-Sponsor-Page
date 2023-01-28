@@ -1,9 +1,9 @@
-# Dockerfile for ariang based scratch
+# Dockerfile for Sponsor-Page based scratch
 # Copyright (C) @ 2022 KIMI360 <https://github.com/kimi360>
 # Reference URL:
 # https://github.com/emikulic/darkhttpd
-# https://github.com/mayswind/AriaNg-DailyBuild AriaNG
-# https://github.com/chrisaxiom/docker-health-check
+# https://github.com/Kaiyuan/sponsor-page
+# https://github.com/TinyJay/donate-page
 
 # Build environment
 FROM alpine:3.17.1 AS build 
