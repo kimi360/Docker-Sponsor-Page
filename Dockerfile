@@ -1,5 +1,5 @@
 # Dockerfile for Sponsor-Page based scratch
-# Copyright (C) @ 2022 KIMI360 <https://github.com/kimi360>
+# Copyright (C) @ 2022-2023 KIMI360 <https://github.com/kimi360>
 # Reference URL:
 # https://github.com/emikulic/darkhttpd
 # https://github.com/Kaiyuan/sponsor-page
@@ -10,43 +10,20 @@ FROM alpine:3.17.1 AS build
 ARG STYLE=1
 
 RUN apk add --no-cache \
-  build-base=~0.5 \
   git=~2.38.3
   
 WORKDIR /src
-RUN git clone https://github.com/emikulic/darkhttpd .
 COPY ./web ./web
-
-# Hardening GCC opts taken from these sources:
-# https://developers.redhat.com/blog/2018/03/21/compiler-and-linker-flags-gcc/
-# https://security.stackexchange.com/q/24444/204684
-ENV CFLAGS=" \
-  -static                                 \
-  -O2                                     \
-  -flto                                   \
-  -D_FORTIFY_SOURCE=2                     \
-  -fstack-clash-protection                \
-  -fstack-protector-strong                \
-  -pipe                                   \
-  -Wall                                   \
-  -Werror=format-security                 \
-  -Werror=implicit-function-declaration   \
-  -Wl,-z,defs                             \
-  -Wl,-z,now                              \
-  -Wl,-z,relro                            \
-  -Wl,-z,noexecstack                      \
-"
-RUN make darkhttpd-static \
- && strip darkhttpd-static \
- && mkdir -p /apps/etc \
- && mv darkhttpd-static /apps/darkhttpd \
- && mv passwd /apps/etc \
- && mv group /apps/etc \ 
+RUN mkdir -p /apps/etc \
  && if [ "$STYLE" = 1 ]; then \
       mv web/sample1 /apps/web; \
     elif [ "$STYLE" = 2 ]; then \
       mv web/sample2 /apps/web; \
     fi; 
+
+COPY --from=kimi360/darkhttpd:1.14 /darkhttpd  /apps/darkhttpd
+COPY --from=kimi360/darkhttpd:1.14 /etc/passwd /apps/etc/passwd
+COPY --from=kimi360/darkhttpd:1.14 /etc/group  /apps/etc/group
 
 FROM scratch
 LABEL maintainer="KIMI360 <https://github.com/kimi360>"
