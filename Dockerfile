@@ -8,9 +8,6 @@
 # Build environment
 FROM alpine:3.17.1 AS build 
 ARG STYLE=1
-
-RUN apk add --no-cache \
-  git=~2.38.3
   
 WORKDIR /src
 COPY ./web ./web
