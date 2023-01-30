@@ -58,7 +58,7 @@ jobs:
         flavor: latest=false     
 
     - name: Build and push Docker image (style1)
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         context: .
         build-args: STYLE=1
@@ -94,7 +94,7 @@ jobs:
         flavor: latest=false     
 
     - name: Build and push Docker image (style2)
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         context: .
         build-args: STYLE=2
