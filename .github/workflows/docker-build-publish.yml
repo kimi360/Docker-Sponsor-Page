@@ -24,6 +24,12 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
       
+    - name: Set version
+      id: set_version
+      run: |
+        URL=https://api.github.com/repos/mayswind/AriaNg/releases/latest
+        echo "version=1.0" >> $GITHUB_OUTPUT
+        
     - name: Cache Docker layers
       uses: actions/cache@v3.2.4
       with:
@@ -48,13 +54,13 @@ jobs:
           type=raw,value=style1,enable=true
         labels: |
           org.opencontainers.image.author=KIMI360
-          org.opencontainers.image.description=
+          org.opencontainers.image.description=A simple sponsorship page
           org.opencontainers.image.licenses=MIT
           org.opencontainers.image.source=https://github.com/kimi360/Docker-Sponsor-Page
           org.opencontainers.image.title=${{ secrets.DOCKER_USERNAME }}/sponsor
           org.opencontainers.image.url=https://github.com/kimi360/Docker-Sponsor-Page
-          org.opencontainers.image.version=
-          org.opencontainers.image.docker.cmd=docker run -p 80:80 -d kimi360/sponsor
+          org.opencontainers.image.version=${{ steps.set_version.outputs.version }}
+          org.opencontainers.image.docker.cmd=docker run -p 80:80 -d kimi360/sponsor:style1
         flavor: latest=false     
 
     - name: Build and push Docker image (style1)
@@ -66,11 +72,11 @@ jobs:
         tags: ${{ steps.meta-style1.outputs.tags }}
         labels: ${{ steps.meta-style1.outputs.labels }}
         platforms: |
-            linux/amd64
-            linux/arm64
-            linux/arm/v7
-            linux/arm/v6
             linux/386
+            linux/amd64
+            linux/arm/v6
+            linux/arm/v7
+            linux/arm64
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
 
@@ -84,13 +90,13 @@ jobs:
           type=raw,value=style2,enable=true
         labels: |
           org.opencontainers.image.author=KIMI360
-          org.opencontainers.image.description=
+          org.opencontainers.image.description=A simple sponsorship page
           org.opencontainers.image.licenses=MIT
           org.opencontainers.image.source=https://github.com/kimi360/Docker-Sponsor-Page
           org.opencontainers.image.title=${{ secrets.DOCKER_USERNAME }}/sponsor
           org.opencontainers.image.url=https://github.com/kimi360/Docker-Sponsor-Page
-          org.opencontainers.image.version=
-          org.opencontainers.image.docker.cmd=docker run -p 80:80 -d kimi360/sponsor
+          org.opencontainers.image.version=${{ steps.set_version.outputs.version }}
+          org.opencontainers.image.docker.cmd=docker run -p 80:80 -d kimi360/sponsor:style1
         flavor: latest=false     
 
     - name: Build and push Docker image (style2)
@@ -102,10 +108,10 @@ jobs:
         tags: ${{ steps.meta-style2.outputs.tags }}
         labels: ${{ steps.meta-style2.outputs.labels }}
         platforms: |
-            linux/amd64
-            linux/arm64
-            linux/arm/v7
-            linux/arm/v6
             linux/386
+            linux/amd64
+            linux/arm/v6
+            linux/arm/v7
+            linux/arm64
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
