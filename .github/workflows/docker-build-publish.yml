@@ -27,7 +27,6 @@ jobs:
     - name: Set version
       id: set_version
       run: |
-        URL=https://api.github.com/repos/mayswind/AriaNg/releases/latest
         echo "version=1.0" >> $GITHUB_OUTPUT
         
     - name: Cache Docker layers
