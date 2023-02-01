@@ -10,6 +10,8 @@ FROM alpine:3.17.1 AS build
 ARG STYLE=1
   
 WORKDIR /src
+
+# Get static files from github
 COPY ./web ./web
 RUN mkdir -p /apps/etc \
  && if [ "$STYLE" = 1 ]; then \
@@ -18,6 +20,7 @@ RUN mkdir -p /apps/etc \
       mv web/sample2 /apps/web; \
     fi; 
 
+# Get darkhttpd from docker
 COPY --from=kimi360/darkhttpd:1.14 /darkhttpd  /apps/darkhttpd
 COPY --from=kimi360/darkhttpd:1.14 /etc/passwd /apps/etc/passwd
 COPY --from=kimi360/darkhttpd:1.14 /etc/group  /apps/etc/group
