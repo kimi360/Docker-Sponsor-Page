@@ -6,7 +6,7 @@
 # https://github.com/TinyJay/donate-page
 
 # Build environment
-FROM alpine:3.17.2 AS build 
+FROM alpine:3.17.3 AS build 
 ARG STYLE=1
   
 WORKDIR /src
