@@ -45,7 +45,7 @@ jobs:
 
     - name: Extract Docker metadata (style1)
       id: meta-style1
-      uses: docker/metadata-action@v4
+      uses: docker/metadata-action@v5
       with:
         images: ${{ secrets.DOCKER_USERNAME }}/sponsor
         tags: |
@@ -82,7 +82,7 @@ jobs:
 
     - name: Extract Docker metadata (style2)
       id: meta-style2
-      uses: docker/metadata-action@v4
+      uses: docker/metadata-action@v5
       with:
         images: ${{ secrets.DOCKER_USERNAME }}/sponsor
         tags: |
