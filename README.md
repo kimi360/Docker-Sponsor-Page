@@ -65,11 +65,6 @@ services:
 ### 打赏咖啡
 ![screenshots][screenshots.sponsor]
 
-
-##  演示
-- [演示站点 - 翻转卡片][demo.style1]
-- [演示站点 - 打赏咖啡][demo.style2] (为适应博客，改了按钮及阴影颜色)
-
 ##  引用
 - [Kaiyuan/sponsor-page][sponsor-page]
 - [TinyJay/donate-page][donate-page]
@@ -93,8 +88,6 @@ services:
 [action]:              https://github.com/kimi360/Docker-Sponsor-Page/actions/workflows/docker-build-publish.yml
 [dockerfile]:          https://github.com/kimi360/Docker-Sponsor-Page/blob/main/Dockerfile
 [license]:             https://github.com/kimi360/Docker-Sponsor-Page/blob/main/LICENSE
-[demo.style1]:         https://sponsor.kimi360.top/style1
-[demo.style2]:         https://sponsor.kimi360.top/style2
 [docker.page]:         https://hub.docker.com/r/kimi360/sponsor
 [docker.tags]:         https://hub.docker.com/r/kimi360/sponsor/tags
 [screenshots.donate]:  https://raw.githubusercontent.com/kimi360/Docker-Sponsor-Page/main/screenshots/donate.webp
